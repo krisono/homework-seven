@@ -38,4 +38,4 @@ npm run compile:sass
 3. Start live server in another terminal: `npm run serve`
 
 ## Live link
-- https://in-info-web4.luddy.indianapolis.iu.edu/~nnaonoch/homework-six/
+- https://in-info-web4.luddy.indianapolis.iu.edu/~nnaonoch/homework-seven/
