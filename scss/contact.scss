@@ -1,4 +1,4 @@
-.special-offers-page {
+.contact-page {
   .nav-holder {
     display: block;
     width: 100%;
@@ -52,13 +52,13 @@
   }
 }
 
-.special-offers-page .container {
-  width: min($offer-page-max-content-width, 92%);
+.contact-page .container {
+  width: min($contact-page-max-content-width, 92%);
   margin: 0 auto;
   padding: 0 $nav-padding-x;
 }
 
-.special-offers-section {
+.contact-section {
   padding: $spacing-lg 0 80px;
   background-color: #fff;
 
@@ -78,86 +78,99 @@
   }
 }
 
-.offers-list {
+.contact-columns {
   display: flex;
   flex-direction: column;
-  gap: $offer-row-gap;
+  gap: $contact-column-gap;
 }
 
-.offer-row {
-  display: flex;
-  flex-direction: column;
-  gap: $spacing-lg;
+.contact-left {
+  width: 100%;
+}
 
-  .offer-image {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    display: block;
-    flex-shrink: 0;
-  }
+.contact-map {
+  width: 100%;
+  max-width: $map-max-width;
+  height: auto;
+  display: block;
+}
 
-  .offer-content {
-    flex: 1;
-  }
+.contact-address {
+  margin-top: $spacing-md;
+  max-width: $map-max-width;
 
-  .offer-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    margin-bottom: $spacing-sm;
-  }
-
-  .offer-title {
-    display: inline-block;
-    font-size: 18px;
-    font-weight: 400;
-    font-style: italic;
-    letter-spacing: $about-heading-letter-spacing;
-    text-transform: uppercase;
-    border-bottom: 2px solid $site-black-text-color;
-    padding-bottom: $about-heading-bottom-padding;
-    color: $site-black-text-color;
-    margin-bottom: 0;
-  }
-
-  .offer-discount {
-    font-size: 16px;
-    font-style: italic;
-    font-weight: 400;
-    color: $sale-banner-font-color;
-    white-space: nowrap;
-    flex-shrink: 0;
-    margin-left: $spacing-md;
-  }
-
-  .offer-description {
+  p {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
     font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 18px;
-    letter-spacing: 1.6px;
+    font-weight: $page-body-font-weight;
+    font-size: $page-body-font-size;
+    line-height: $page-body-line-height;
     color: $site-black-text-color;
-    max-width: 290px;
-    margin-top: $spacing-md;
-    margin-bottom: $spacing-lg;
+    margin-bottom: 0;
+    letter-spacing: 0.3px;
+  }
+}
+
+.contact-right {
+  width: 100%;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
   }
 
-  .offer-button {
-    display: inline-block;
+  input,
+  textarea {
+    width: 100%;
+    background-color: $contact-form-bg-color;
+    border: $input-border-width solid $input-border-color;
+    padding: $input-padding-vertical $input-padding-horizontal;
+    font-size: $page-body-font-size;
+    color: $site-black-text-color;
+    outline: none;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    border-radius: $border-radius-sm;
+    transition: border-color 0.2s ease;
+
+    &::placeholder {
+      color: #aaa;
+    }
+
+    &:focus {
+      border-color: $input-border-focus-color;
+      background-color: #fff;
+    }
+  }
+
+  input {
+    height: $contact-input-height;
+  }
+
+  textarea {
+    height: $contact-textarea-height;
+    resize: vertical;
+  }
+
+  .contact-submit-btn {
+    margin-top: $spacing-sm;
     background-color: $theme-color;
     color: $site-white-text-color;
-    text-decoration: none;
     border: none;
-    padding: 12px 34px;
-    font-size: 13px;
+    padding: 16px 24px;
+    font-size: 14px;
     font-weight: 600;
-    border-radius: $border-radius-pill;
-    cursor: pointer;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: $border-radius-sm;
+    transition: background-color 0.2s ease;
 
     &:hover {
       background-color: $button-hover-bg-color;
@@ -166,19 +179,23 @@
 }
 
 @media (min-width: 768px) {
-  .offer-row {
+  .contact-columns {
     flex-direction: row;
     align-items: flex-start;
+  }
 
-    .offer-image {
-      width: $offer-image-width;
-      height: $offer-image-height;
-    }
+  .contact-left {
+    width: 47%;
+    flex-shrink: 0;
+  }
+
+  .contact-right {
+    flex: 1;
   }
 }
 
 @media (max-width: 767px) {
-  .special-offers-page {
+  .contact-page {
     .nav-holder {
       .nav-content {
         flex-direction: column;
@@ -193,15 +210,11 @@
     }
   }
 
-  .offer-row {
-    .offer-image {
-      width: 100%;
-      height: 220px;
-    }
+  .contact-map {
+    max-width: 100%;
+  }
 
-    .offer-header {
-      flex-direction: row;
-      gap: $spacing-sm;
-    }
+  .contact-address {
+    max-width: 100%;
   }
 }

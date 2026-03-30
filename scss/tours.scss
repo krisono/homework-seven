@@ -2,7 +2,6 @@
   .nav-holder {
     display: block;
     width: 100%;
-    border-bottom: 1px solid $site-black-text-color;
 
     .nav-content {
       display: flex;
@@ -11,6 +10,7 @@
       width: min($container-max-width, 92%);
       margin: 0 auto;
       padding: $nav-padding-y $nav-padding-x;
+      border-bottom: 2px solid $site-black-text-color;
 
       .nav-logo {
         border: $input-border-width solid $site-black-text-color;
@@ -54,6 +54,7 @@
 
 .tours-page .container {
   max-width: $tours-page-max-content-width;
+  margin: 0 auto;
 }
 
 .tours-hero {
