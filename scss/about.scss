@@ -1,0 +1,207 @@
+.about-page {
+  .nav-holder {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid $site-black-text-color;
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: min($container-max-width, 92%);
+      margin: 0 auto;
+      padding: $nav-padding-y $nav-padding-x;
+
+      .nav-logo {
+        border: $input-border-width solid $site-black-text-color;
+        padding: 8px 16px;
+        font-size: 13px;
+        font-weight: 400;
+        text-transform: lowercase;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+        color: $site-black-text-color;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        a {
+          text-decoration: none;
+          color: $site-black-text-color;
+          font-size: 14px;
+          text-transform: lowercase;
+          padding: 0 4px;
+
+          &:hover,
+          &.active {
+            text-decoration: underline;
+          }
+        }
+
+        .separator {
+          width: 1px;
+          height: 16px;
+          background-color: $theme-color;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
+
+.about-page .container {
+  max-width: $nav-content-max-width;
+}
+
+.about-intro {
+  padding: $spacing-lg 0 80px;
+  background-color: #fff;
+
+  .about-heading {
+    display: inline-block;
+    font-size: $about-heading-font-size;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: $about-heading-letter-spacing;
+    text-transform: uppercase;
+    border-bottom: $about-heading-underline-thickness solid
+      $site-black-text-color;
+    padding-bottom: $about-heading-bottom-padding;
+    margin-bottom: $spacing-lg;
+    color: $site-black-text-color;
+  }
+
+  p {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-size: $about-paragraph-font-size;
+    font-style: normal;
+    font-weight: normal;
+    line-height: $about-paragraph-line-height;
+    letter-spacing: 1.6px;
+    text-align: left;
+    color: $site-black-text-color;
+    margin-bottom: 0;
+  }
+}
+
+.about-section {
+  padding: $spacing-lg 0 60px;
+  background-color: #fff;
+
+  .about-heading {
+    display: inline-block;
+    font-size: $about-heading-font-size;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: $about-heading-letter-spacing;
+    text-transform: uppercase;
+    border-bottom: $about-heading-underline-thickness solid
+      $site-black-text-color;
+    padding-bottom: $about-heading-bottom-padding;
+    margin-bottom: $spacing-lg;
+    color: $site-black-text-color;
+  }
+
+  .client-quotes {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+}
+
+.client-quote {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  background-color: #fff;
+  max-width: 685px;
+
+  .client-image {
+    width: 100%;
+    height: $quote-image-height;
+    background-color: #ccc;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-origin: padding-box;
+    flex-shrink: 0;
+  }
+
+  .client-image-1 {
+    background-image: url("../images/442c3df5e07094ad40ce7b852930b8d4.png");
+  }
+
+  .client-image-2 {
+    background-image: url("../images/about-client-02.png");
+  }
+
+  .client-info {
+    flex: 1;
+    max-width: 385px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .client-text {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+      font-size: $about-paragraph-font-size;
+      font-style: italic;
+      font-weight: normal;
+      line-height: $about-paragraph-line-height;
+      letter-spacing: 1.6px;
+      text-align: left;
+      color: $site-black-text-color;
+      margin-bottom: $spacing-md;
+    }
+
+    .client-name {
+      font-size: 14px;
+      font-style: italic;
+      font-weight: 400;
+      color: $theme-color;
+      text-align: right;
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .client-quote {
+    flex-direction: row;
+
+    .client-image {
+      width: $quote-image-width;
+      height: $quote-image-height;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .client-quote {
+    flex-direction: column;
+
+    .client-image {
+      width: 100%;
+      height: $quote-image-height;
+    }
+  }
+
+  .about-page {
+    .nav-holder {
+      .nav-content {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+
+        .nav-links {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
